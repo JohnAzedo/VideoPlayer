@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.example.videoplayer.ui.theme.VideoPlayerTheme
 
 class VideoListFragment : Fragment() {
 
@@ -33,7 +34,9 @@ class VideoListFragment : Fragment() {
         navController =  findNavController();
         return ComposeView(requireContext()).apply {
             setContent {
-                Page()
+                VideoPlayerTheme {
+                    Page()
+                }
             }
         }
     }
@@ -72,10 +75,17 @@ class VideoListFragment : Fragment() {
     fun VideoItem(video: Video) {
         Card(
             onClick = { navController.navigate(R.id.viewVideoPlayer) },
-            modifier = Modifier.padding(16.dp),
-            elevation = 4.dp
+            modifier = Modifier
+                .padding(horizontal = 16.dp, vertical = 8.dp)
+                .fillMaxSize(),
+            elevation = 4.dp,
         ){
-            Text(text = video.title)
+            Column(modifier = Modifier.padding(8.dp)) {
+                Text(text = video.title)
+                Text(text = video.author)
+                Text(text = video.url)
+            }
+
         }
     }
 }
