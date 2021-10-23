@@ -1,4 +1,4 @@
-package com.example.home
+package com.example.mylist
 
 import org.junit.Test
 
