@@ -19,7 +19,7 @@ object RetrofitClient {
     }
 
     private fun buildClient(): OkHttpClient {
-        client.addInterceptor(ApiKeyInterceptor())
+        client.addInterceptor(CustomInterceptor())
         return client.build()
     }
 }
