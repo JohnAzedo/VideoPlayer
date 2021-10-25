@@ -1,7 +1,7 @@
 package com.example.domain.usecases
 
 import com.example.data.repositories.MovieRepository
-import com.example.domain.models.Movie
+import com.example.model.Movie
 
 class MovieUseCaseImpl(
     private val movieRepository: MovieRepository

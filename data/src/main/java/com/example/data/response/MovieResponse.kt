@@ -1,6 +1,6 @@
 package com.example.data.response
 
-import com.example.domain.model.Movie
+import com.example.model.Movie
 import com.google.gson.annotations.SerializedName
 
 data class MovieResponse(

@@ -8,7 +8,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "VideoPlayer"
 include ':app'
-include ':home'
-include ':mylist'
 include ':data'
 include ':domain'
+include ':model'
+include ':ui'
