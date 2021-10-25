@@ -9,14 +9,14 @@ class GetMovieTest {
 
     @Test
     fun getMovieTest() {
-        val call: Call<Movie> = service.getMovie(MOVIE_ID)
+        val call: Call<MovieResponse> = service.getMovie(MOVIE_ID)
         val response = call.execute()
         assertEquals(response.isSuccessful, true)
     }
 
     @Test
     fun getMoviesTest() {
-        val call: Call<List<Movie>> = service.discoveryMoviesByGenres(GENRES_ID)
+        val call: Call<MovieListResponse> = service.discoveryMoviesByGenres(GENRES_ID)
         val response = call.execute()
         assertEquals(response.isSuccessful, true)
     }

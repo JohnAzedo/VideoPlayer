@@ -7,8 +7,8 @@ import retrofit2.http.Query
 
 interface MovieService {
     @GET("movie/{movie_id}")
-    fun getMovie(@Path("movie_id") movieId: Int): Call<Movie>
+    fun getMovie(@Path("movie_id") movieId: Int): Call<MovieResponse>
 
     @GET("discover/movie")
-    fun discoveryMoviesByGenres(@Query("with_genres") genresId: Int): Call<List<Movie>>
+    fun discoveryMoviesByGenres(@Query("with_genres") genresId: Int): Call<MovieListResponse>
 }

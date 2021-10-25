@@ -2,7 +2,7 @@ package com.example.data
 
 import com.google.gson.annotations.SerializedName
 
-data class Movie(
+data class MovieResponse(
     @SerializedName("id")
     val id: Int,
     @SerializedName("title")
