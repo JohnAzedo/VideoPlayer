@@ -1,4 +1,16 @@
 package com.example.domain.usecases
 
-class MovieUseCase {
+import com.example.data.repositories.MovieRepository
+import com.example.domain.models.Movie
+
+class MovieUseCaseImpl(
+    private val movieRepository: MovieRepository
+): MovieUseCase{
+    override suspend fun getMovies(genresId: Int): List<Movie> {
+        return movieRepository.getMoviesByGenres(genresId)
+    }
+}
+
+interface MovieUseCase {
+    suspend fun getMovies(genresId: Int): List<Movie>
 }
