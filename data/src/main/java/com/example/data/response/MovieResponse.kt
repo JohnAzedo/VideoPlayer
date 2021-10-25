@@ -1,5 +1,6 @@
 package com.example.data.response
 
+import com.example.data.model.Movie
 import com.google.gson.annotations.SerializedName
 
 data class MovieResponse(
@@ -11,4 +12,12 @@ data class MovieResponse(
     val description: String,
     @SerializedName("backdrop_path")
     val imageUrl: String,
+)
+
+
+fun MovieResponse.toMovie() = Movie (
+    id = this.id,
+    title = this.title,
+    imageUrl = this.imageUrl,
+    description = this.description
 )

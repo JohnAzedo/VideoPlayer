@@ -7,7 +7,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 import retrofit2.Response
 
-class GetMovieTest {
+class GetMovieServiceTest {
 
     @Test
     fun testGetMovie() = runBlocking {
