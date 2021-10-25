@@ -1,4 +1,4 @@
-package com.example.data
+package com.example.data.config
 
 import retrofit2.Response
 import java.net.HttpURLConnection

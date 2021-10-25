@@ -1,7 +1,9 @@
 package com.example.data
 
+import com.example.data.config.RetrofitClient
 import com.example.data.response.MovieListResponse
 import com.example.data.response.MovieResponse
+import com.example.data.services.MovieService
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Test

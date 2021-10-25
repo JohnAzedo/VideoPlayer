@@ -1,5 +1,6 @@
-package com.example.data
+package com.example.data.config
 
+import com.example.data.BuildConfig
 import okhttp3.HttpUrl
 import okhttp3.Interceptor
 import okhttp3.Request

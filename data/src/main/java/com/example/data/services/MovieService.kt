@@ -1,4 +1,4 @@
-package com.example.data
+package com.example.data.services
 
 import com.example.data.response.MovieListResponse
 import com.example.data.response.MovieResponse

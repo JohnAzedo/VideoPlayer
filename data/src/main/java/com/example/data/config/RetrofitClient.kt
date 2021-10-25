@@ -1,4 +1,4 @@
-package com.example.data
+package com.example.data.config
 import com.google.gson.GsonBuilder
 import okhttp3.*
 import retrofit2.Retrofit
