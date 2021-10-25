@@ -1,25 +1,26 @@
 package com.example.data
 
+import com.example.data.response.MovieListResponse
+import com.example.data.response.MovieResponse
+import kotlinx.coroutines.runBlocking
+import org.junit.Assert.assertEquals
 import org.junit.Test
-
-import org.junit.Assert.*
-import retrofit2.Call
+import retrofit2.Response
 
 class GetMovieTest {
 
     @Test
-    fun getMovieTest() {
-        val call: Call<MovieResponse> = service.getMovie(MOVIE_ID)
-        val response = call.execute()
+    fun testGetMovie() = runBlocking {
+        val response: Response<MovieResponse> = service.getMovie(MOVIE_ID)
         assertEquals(response.isSuccessful, true)
     }
 
     @Test
-    fun getMoviesTest() {
-        val call: Call<MovieListResponse> = service.discoveryMoviesByGenres(GENRES_ID)
-        val response = call.execute()
+    fun testGetListMovie() = runBlocking {
+        val response: Response<MovieListResponse> = service.discoveryMoviesByGenres(GENRES_ID)
         assertEquals(response.isSuccessful, true)
     }
+
 
     companion object {
         const val MOVIE_ID = 550
