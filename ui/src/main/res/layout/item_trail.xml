@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/name_trial"
+        android:id="@+id/txt_name_trial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
@@ -15,12 +15,12 @@
         android:text="Ação"
         tools:text="Ação" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/name_trial"
-        android:orientation="horizontal"
-        tools:listitem="@layout/item_movie"
-        tools:orientation="horizontal"/>
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/txt_name_trial"-->
+<!--        android:orientation="horizontal"-->
+<!--        tools:listitem="@layout/item_movie"-->
+<!--        tools:orientation="horizontal"/>-->
 
 </RelativeLayout>
