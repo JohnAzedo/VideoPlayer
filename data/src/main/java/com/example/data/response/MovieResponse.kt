@@ -10,7 +10,7 @@ data class MovieResponse(
     val title: String,
     @SerializedName("overview")
     val description: String,
-    @SerializedName("backdrop_path")
+    @SerializedName("poster_path")
     val imageUrl: String,
 )
 
@@ -18,6 +18,6 @@ data class MovieResponse(
 fun MovieResponse.toMovie() = Movie (
     id = this.id,
     title = this.title,
-    imageUrl = this.imageUrl,
+    imageUrl = "https://image.tmdb.org/t/p/w500" + this.imageUrl,
     description = this.description
 )

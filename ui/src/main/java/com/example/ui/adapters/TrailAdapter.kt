@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.model.Trail
 import com.example.ui.databinding.ItemTrailBinding
-import com.example.ui.viewholders.TrailViewHolder
+import com.example.ui.adapters.viewholders.TrailViewHolder
 
 
 class TrailAdapter: ListAdapter<Trail, TrailViewHolder>(BookDiffCallback()){
@@ -22,7 +22,8 @@ class TrailAdapter: ListAdapter<Trail, TrailViewHolder>(BookDiffCallback()){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrailViewHolder {
         val binding = ItemTrailBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return TrailViewHolder(binding, MovieAdapter(), LinearLayoutManager(binding.root.context, RecyclerView.HORIZONTAL, false))
+        val movieAdapter = MovieAdapter()
+        return TrailViewHolder(binding, movieAdapter)
     }
 
     override fun onBindViewHolder(holder: TrailViewHolder, position: Int) {

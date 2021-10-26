@@ -1,8 +1,9 @@
-package com.example.ui.viewholders
+package com.example.ui.adapters.viewholders
 
+import android.net.Uri
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.model.Movie
-
 import com.example.ui.databinding.ItemMovieBinding
 
 class MovieViewHolder(
@@ -10,7 +11,8 @@ class MovieViewHolder(
 ) : RecyclerView.ViewHolder(itemBiding.root){
     fun bind(movie: Movie){
         with(itemBiding){
-            ivMovie.setImageResource(com.example.ui.R.drawable.hp_thumbnail)
+            val uri = Uri.parse(movie.imageUrl)
+            Glide.with(itemBiding.root.context).load(uri).into(ivMovie)
         }
     }
 }

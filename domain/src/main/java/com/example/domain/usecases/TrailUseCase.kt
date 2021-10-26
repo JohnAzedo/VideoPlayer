@@ -6,15 +6,8 @@ class GetTrailsUseCaseImpl: GetTrailsUseCase{
     override suspend fun getTrails(): List<Trail> {
         return listOf(
             Trail(
+                id = 28,
                 title = "Ação",
-                movies = listOf()
-            ),
-            Trail(
-                title = "Ficcão",
-                movies = listOf()
-            ),
-            Trail(
-                title = "Comédia",
                 movies = listOf()
             ),
         )

@@ -20,7 +20,10 @@ class HomeViewModel(
     fun getTrails() {
         viewModelScope.launch {
             val listTrail = trailUseCase.getTrails()
-            listTrail[0].movies = movieUseCase.getMoviesMock()
+
+            with(listTrail[0]){
+                this.movies = movieUseCase.getMovies(this.id)
+            }
             _trails.postValue(listTrail)
         }
     }
