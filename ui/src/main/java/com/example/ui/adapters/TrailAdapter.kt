@@ -1,4 +1,4 @@
-package com.example.ui.home.trail
+package com.example.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.model.Trail
 import com.example.ui.databinding.ItemTrailBinding
-import com.example.ui.home.movie.MovieAdapter
+import com.example.ui.viewholders.TrailViewHolder
 
 
 class TrailAdapter: ListAdapter<Trail, TrailViewHolder>(BookDiffCallback()){

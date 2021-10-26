@@ -1,10 +1,10 @@
-package com.example.ui.home.trail
+package com.example.ui.viewholders
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.model.Trail
 import com.example.ui.databinding.ItemTrailBinding
-import com.example.ui.home.movie.MovieAdapter
+import com.example.ui.adapters.MovieAdapter
 
 class TrailViewHolder(
     private val itemBiding: ItemTrailBinding,

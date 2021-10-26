@@ -1,6 +1,5 @@
-package com.example.ui.home.movie
+package com.example.ui.viewholders
 
-import androidx.activity.ktx.R
 import androidx.recyclerview.widget.RecyclerView
 import com.example.model.Movie
 

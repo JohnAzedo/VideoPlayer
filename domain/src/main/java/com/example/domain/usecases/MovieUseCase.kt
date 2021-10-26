@@ -19,15 +19,27 @@ class GetMovieUseCaseImpl(
                 imageUrl = ""
             ),
             Movie(
-                id = 1,
+                id = 2,
                 title = "Testing 2",
                 description = "Testing 2",
                 imageUrl = ""
             ),
             Movie(
-                id = 1,
+                id = 3,
                 title = "Testing 3",
                 description = "Testing 3",
+                imageUrl = ""
+            ),
+            Movie(
+                id = 4,
+                title = "Testing 4",
+                description = "Testing 4",
+                imageUrl = ""
+            ),
+            Movie(
+                id = 5,
+                title = "Testing 5",
+                description = "Testing 5",
                 imageUrl = ""
             )
         )

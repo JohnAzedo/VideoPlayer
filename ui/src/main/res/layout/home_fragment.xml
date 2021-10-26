@@ -11,9 +11,7 @@
         android:id="@+id/rv_trail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:listitem="@layout/item_trail" />
 
-        tools:listitem="@layout/item_trail">
-
-    </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.example.ui.home.movie
+package com.example.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.example.model.Movie
 import com.example.ui.databinding.ItemMovieBinding
+import com.example.ui.viewholders.MovieViewHolder
 
 class MovieAdapter: ListAdapter<Movie, MovieViewHolder>(MovieDiffCallback()){
 
