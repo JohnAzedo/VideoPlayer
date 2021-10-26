@@ -2,7 +2,7 @@ package com.example.domain.usecases
 
 import com.example.model.Trail
 
-class TrailUseCaseImpl: TrailUseCase{
+class GetTrailsUseCaseImpl: GetTrailsUseCase{
     override suspend fun getTrails(): List<Trail> {
         return listOf(
             Trail(
@@ -23,6 +23,6 @@ class TrailUseCaseImpl: TrailUseCase{
 
 }
 
-interface TrailUseCase {
+interface GetTrailsUseCase {
     suspend fun getTrails(): List<Trail>
 }

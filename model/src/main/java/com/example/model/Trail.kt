@@ -1,6 +1,6 @@
 package com.example.model
 
 data class Trail(
-    val title: String,
-    val movies: List<Movie>
+    var title: String,
+    var movies: List<Movie>
 )

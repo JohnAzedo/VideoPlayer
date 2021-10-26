@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     android:background="@color/background">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_trail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         tools:listitem="@layout/item_trail">
 
     </androidx.recyclerview.widget.RecyclerView>
