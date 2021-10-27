@@ -1,6 +1,8 @@
 package com.example.ui.adapters.viewholders
 
 import android.net.Uri
+import android.util.Log
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.model.Movie
@@ -13,6 +15,13 @@ class MovieViewHolder(
         with(itemBiding){
             val uri = Uri.parse(movie.imageUrl)
             Glide.with(itemBiding.root.context).load(uri).into(ivMovie)
+            ivMovie.setOnClickListener {
+                Log.v("MovieViewHolder", "Has clicked: " + movie.title)
+            }
         }
+    }
+
+    fun navigateToNewFragment(){
+        itemBiding.root.findNavController()
     }
 }

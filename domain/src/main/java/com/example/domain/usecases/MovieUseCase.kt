@@ -6,8 +6,8 @@ import com.example.model.Movie
 class GetMovieUseCaseImpl(
     private val movieRepository: MovieRepository
 ): GetMovieUseCase{
-    override suspend fun getMovies(genresId: Int): List<Movie> {
-        return movieRepository.getMoviesByGenres(genresId)
+    override suspend fun getMovie(movieId: Int): Movie {
+        return movieRepository.getMovie(movieId)
     }
 
     override suspend fun getMoviesMock(): List<Movie> {
@@ -47,6 +47,6 @@ class GetMovieUseCaseImpl(
 }
 
 interface GetMovieUseCase {
-    suspend fun getMovies(genresId: Int): List<Movie>
+    suspend fun getMovie(movieId: Int): Movie
     suspend fun getMoviesMock(): List<Movie>
 }
