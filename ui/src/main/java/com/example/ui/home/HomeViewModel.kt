@@ -11,7 +11,6 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel(
     private val trailUseCase: GetTrailsUseCase,
-    private val movieUseCase: GetMovieUseCase
 ): ViewModel() {
 
     private val _trails = MutableLiveData<List<Trail>>()
@@ -20,10 +19,6 @@ class HomeViewModel(
     fun getTrails() {
         viewModelScope.launch {
             val listTrail = trailUseCase.getTrails()
-
-            with(listTrail[0]){
-                this.movies = movieUseCase.getMovies(this.id)
-            }
             _trails.postValue(listTrail)
         }
     }

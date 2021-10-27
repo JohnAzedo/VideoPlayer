@@ -16,9 +16,8 @@ object HomeViewModelFactory {
         override fun <T: ViewModel?> create(modelClass: Class<T>): T {
             val service = RetrofitClient.buildService(MovieService::class.java)
             val movieRepo = MovieRepositoryImpl(service)
-            val trailUseCase = GetTrailsUseCaseImpl()
-            val movieUseCase = GetMovieUseCaseImpl(movieRepo)
-            return HomeViewModel(trailUseCase, movieUseCase) as T
+            val trailUseCase = GetTrailsUseCaseImpl(movieRepo)
+            return HomeViewModel(trailUseCase) as T
         }
     }
 

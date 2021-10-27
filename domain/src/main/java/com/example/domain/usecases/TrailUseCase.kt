@@ -1,19 +1,27 @@
 package com.example.domain.usecases
 
+import com.example.data.repositories.MovieRepository
 import com.example.model.Trail
 
-class GetTrailsUseCaseImpl: GetTrailsUseCase{
+class GetTrailsUseCaseImpl(
+    private val movieRepository: MovieRepository
+): GetTrailsUseCase{
     override suspend fun getTrails(): List<Trail> {
-        return listOf(
-            Trail(
-                id = 28,
-                title = "Ação",
-                movies = listOf()
-            ),
+         val trails = listOf(
+            Trail(id=28, title="Action"),
+            Trail(id=12, title="Adventure"),
+            Trail(id=16, title="Animation"),
+            Trail(id=35, title="Comedy"),
+            Trail(id=80, title="Crime"),
+            Trail(id=99, title="Documentary"),
         )
+
+        trails.map {
+            it.movies = movieRepository.getMoviesByGenres(it.id)
+        }
+
+        return trails
     }
-
-
 }
 
 interface GetTrailsUseCase {
