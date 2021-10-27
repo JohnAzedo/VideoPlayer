@@ -19,8 +19,7 @@ class MovieDetailFragment: Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         bind = MovieDetailFragmentBinding.inflate(inflater, container, false)
-
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return bind?.root
     }
 
 

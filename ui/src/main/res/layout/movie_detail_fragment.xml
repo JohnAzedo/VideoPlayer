@@ -13,6 +13,7 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/white"
+        android:text="Dune"
         tools:text="Dune"
         />
 </RelativeLayout>
