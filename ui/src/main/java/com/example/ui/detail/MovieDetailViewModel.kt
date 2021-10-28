@@ -18,7 +18,7 @@ class MovieDetailViewModel(
 
     fun getMovie(movieId: Int) {
         viewModelScope.launch {
-            movieUseCase.getMovie(movieId)
+            _movie.postValue(movieUseCase.getMovie(movieId))
         }
     }
 

@@ -19,9 +19,21 @@ class MovieDetailFragment: Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         bind = MovieDetailFragmentBinding.inflate(inflater, container, false)
+        arguments?.let {
+            val id = it.getInt("movieId")
+            viewModel.getMovie(id)
+        }
         return bind?.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        viewModel.movie.observe(viewLifecycleOwner) { movie ->
+            with(bind!!) {
+                txtTitleMovie.text = movie.title
+            }
+        }
+        super.onViewCreated(view, savedInstanceState)
+    }
 
     override fun onDestroy() {
         bind = null

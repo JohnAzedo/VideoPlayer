@@ -27,10 +27,8 @@ class MyListFragment: Fragment(){
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        var listSize = 0
         viewModel.movies.observe(viewLifecycleOwner) {
             movieAdapter.submitList(it)
-            listSize = it.size
         }
 
         bind?.let {

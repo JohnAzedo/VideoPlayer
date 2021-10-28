@@ -17,7 +17,6 @@ class HomeFragment: Fragment() {
     private val viewModel: HomeViewModel by lazy { make() }
     private lateinit var trailAdapter: TrailAdapter
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -30,7 +29,6 @@ class HomeFragment: Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         viewModel.trails.observe(viewLifecycleOwner) {
             trailAdapter.submitList(it)
         }
