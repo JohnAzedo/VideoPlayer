@@ -44,7 +44,6 @@
         android:ellipsize="end"
         android:maxLines="3"
         android:textSize="16sp"
-
         tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
 
     <LinearLayout
@@ -53,20 +52,25 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/txt_movie_description"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_watch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Assista"
+            android:drawableLeft="@drawable/baseline_play_arrow_24"
+            android:drawableTint="@color/background"
+            android:text="@string/watch"
             tools:ignore="ButtonStyle" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_my_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Minha Lista"
+            android:drawableLeft="@drawable/baseline_star_rate_black_18"
+            android:drawableTint="@color/background"
+            android:text="@string/my_list"
             tools:ignore="ButtonStyle" />
 
     </LinearLayout>
@@ -77,10 +81,7 @@
         android:layout_below="@id/ll_buttons"
         android:orientation="vertical"
         tools:ignore="UselessLeaf">
-        
+
     </LinearLayout>
-
-
-
 
 </RelativeLayout>
