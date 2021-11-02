@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/watch_too_fragment"
+        android:enabled="true"
+        android:title="@string/watch_too"/>
+    <item android:id="@+id/info_fragment"
+        android:enabled="true"
+        android:title="@string/info_detail"/>
+</menu>
