@@ -28,12 +28,12 @@ class MovieDetailFragment: Fragment(){
             val id = it.getInt("movieId")
             viewModel.getMovie(id)
         }
-        setTabs()
         return bind?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         observeMovieState()
+        setTabs()
         super.onViewCreated(view, savedInstanceState)
     }
 
