@@ -29,8 +29,8 @@ class HomeFragment: Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel.trails.observe(viewLifecycleOwner) {
-            trailAdapter.submitList(it)
+        viewModel.state.observe(viewLifecycleOwner) {
+            trailAdapter.submitList(it.value)
         }
 
         bind?.let {
@@ -39,7 +39,6 @@ class HomeFragment: Fragment() {
                 adapter = trailAdapter
             }
         }
-
         super.onViewCreated(view, savedInstanceState)
     }
 
@@ -47,5 +46,4 @@ class HomeFragment: Fragment() {
         bind = null
         super.onDestroy()
     }
-
 }

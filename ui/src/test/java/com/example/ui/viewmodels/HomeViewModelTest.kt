@@ -38,7 +38,8 @@ class HomeViewModelTest {
         // When
         viewModel.getTrails()
         // Then
+        val state = viewModel.state.value
         coVerify { useCase.getTrails() }
-        assert(viewModel.trails.value == listOfTrails)
+        assert(state?.value == listOfTrails)
     }
 }
