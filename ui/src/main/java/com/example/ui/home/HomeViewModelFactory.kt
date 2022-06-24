@@ -9,6 +9,7 @@ import com.example.data.repositories.MovieRepositoryImpl
 import com.example.data.services.MovieService
 import com.example.domain.usecases.GetTrailsUseCaseImpl
 import com.example.domain.usecases.GetMovieUseCaseImpl
+import kotlinx.coroutines.Dispatchers
 
 object HomeViewModelFactory {
 

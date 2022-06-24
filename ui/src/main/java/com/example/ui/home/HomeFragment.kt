@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ui.databinding.HomeFragmentBinding
 import com.example.ui.home.HomeViewModelFactory.make
@@ -29,8 +28,15 @@ class HomeFragment: Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel.trails.observe(viewLifecycleOwner) {
-            trailAdapter.submitList(it)
+        viewModel.state.observe(viewLifecycleOwner) {
+            trailAdapter.submitList(it.value)
+            showTrails()
+        }
+
+        viewModel.actions.observe(viewLifecycleOwner) {
+            when(it){
+                HomeAction.HideLoader -> hideLoader()
+            }
         }
 
         bind?.let {
@@ -39,13 +45,19 @@ class HomeFragment: Fragment() {
                 adapter = trailAdapter
             }
         }
-
         super.onViewCreated(view, savedInstanceState)
+    }
+
+    private fun hideLoader() {
+        bind?.loader?.visibility = View.GONE
+    }
+
+    private fun showTrails(){
+        bind?.rvTrail?.visibility = View.VISIBLE
     }
 
     override fun onDestroy() {
         bind = null
         super.onDestroy()
     }
-
 }
