@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         hideBottomBar(false)
     }
 
-    fun hideBottomBar(hide: Boolean){
+    private fun hideBottomBar(hide: Boolean){
         navigation.visibility = when(hide) {
             true -> View.GONE
             false -> View.VISIBLE
