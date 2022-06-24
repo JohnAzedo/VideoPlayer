@@ -4,6 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.domain.usecases.GetTrailsUseCase
 import com.example.ui.MainCoroutineRule
 import com.example.ui.ViewModelStubs
+import com.example.ui.home.HomeAction
 import com.example.ui.home.HomeViewModel
 import io.mockk.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -39,7 +40,9 @@ class HomeViewModelTest {
         viewModel.getTrails()
         // Then
         val state = viewModel.state.value
+        val action = viewModel.actions.value
         coVerify { useCase.getTrails() }
         assert(state?.value == listOfTrails)
+        assert(action == HomeAction.HideLoader)
     }
 }

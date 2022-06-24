@@ -1,8 +1,8 @@
 package com.example.ui.home
 
 import com.example.model.Trail
-import com.example.ui.ViewState
+import com.example.ui.State
 
 data class HomeState (
-    val value: List<Trail>
-): ViewState()
+    var value: List<Trail>,
+): State
