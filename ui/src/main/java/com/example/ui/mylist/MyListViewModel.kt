@@ -1,26 +1,21 @@
 package com.example.ui.mylist
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.domain.usecases.GetMovieUseCase
-import com.example.model.Movie
+import com.example.ui.ViewModel
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MyListViewModel(
-    private val useCase: GetMovieUseCase
-): ViewModel(){
-
-    private val _movies = MutableLiveData<List<Movie>>()
-    val movies: LiveData<List<Movie>> get() = _movies
+    private val useCase: GetMovieUseCase,
+    private val dispatcher: CoroutineDispatcher = Dispatchers.IO
+): ViewModel<MyListState, MyListActions>(){
 
     fun getMovies() {
-        viewModelScope.launch {
-            val list = useCase.getMoviesMock()
-            _movies.postValue(list)
+        viewModelScope.launch(dispatcher) {
+            val movies = useCase.getMoviesMock()
+            setState(MyListState(movies))
         }
     }
-
-
 }

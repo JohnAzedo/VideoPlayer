@@ -27,9 +27,11 @@ class MyListFragment: Fragment(){
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel.movies.observe(viewLifecycleOwner) {
-            movieAdapter.submitList(it)
+        viewModel.state.observe(viewLifecycleOwner) {
+            movieAdapter.submitList(it.value)
         }
+
+        viewModel.actions.observe(viewLifecycleOwner) {}
 
         bind?.let {
             it.rvMovie.apply {
