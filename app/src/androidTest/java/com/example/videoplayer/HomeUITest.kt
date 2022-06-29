@@ -22,4 +22,10 @@ class HomeUITest {
     fun `Check if title is play movie`() {
         onView(withText("PlayMovie")).check(matches(isDisplayed()))
     }
+
+    // Need to mock viewModel
+    @Test
+    fun `Check if Adventure label isDisplayed`(){
+        onView(withText("Adventure")).check(matches(isDisplayed()))
+    }
 }
