@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.ui.databinding.MyListFragmentBinding
+import com.example.videoplayer.databinding.MyListFragmentBinding
 import com.example.videoplayer.features.adapters.MovieAdapter
 import org.koin.android.ext.android.inject
 

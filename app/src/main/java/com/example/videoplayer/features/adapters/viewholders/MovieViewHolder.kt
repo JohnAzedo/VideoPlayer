@@ -2,13 +2,13 @@ package com.example.videoplayer.features.adapters.viewholders
 
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.model.Movie
-import com.example.ui.R
-import com.example.ui.databinding.ItemMovieBinding
+import com.example.videoplayer.R
+import com.example.videoplayer.databinding.ItemMovieBinding
+
 
 class MovieViewHolder(
     private val itemBiding: ItemMovieBinding,

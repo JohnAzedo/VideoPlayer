@@ -3,7 +3,7 @@ package com.example.videoplayer.features.adapters.viewholders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.model.Trail
-import com.example.ui.databinding.ItemTrailBinding
+import com.example.videoplayer.databinding.ItemTrailBinding
 import com.example.videoplayer.features.adapters.MovieAdapter
 
 class TrailViewHolder(
