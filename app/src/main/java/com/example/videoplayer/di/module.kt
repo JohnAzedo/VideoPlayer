@@ -13,8 +13,8 @@ import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.core.module.dsl.factoryOf
 import org.koin.core.module.dsl.bind
 import org.koin.dsl.module
-import com.example.ui.home.HomeViewModel
-import com.example.ui.mylist.MyListViewModel
+import com.example.videoplayer.features.home.HomeViewModel
+import com.example.videoplayer.features.mylist.MyListViewModel
 
 val appModule = module {
     single {

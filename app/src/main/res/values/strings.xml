@@ -2,4 +2,7 @@
     <string name="app_name">globoplay</string>
     <string name="home">Início</string>
     <string name="my_list">Minha Lista</string>
+    <string name="watch">Assista</string>
+    <string name="watch_too">Assista também</string>
+    <string name="info_detail">Detalhes</string>
 </resources>

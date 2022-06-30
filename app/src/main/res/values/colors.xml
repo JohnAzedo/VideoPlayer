@@ -8,6 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="text_no_focus">#FF666666</color>
-    <color name="background">#FF1F1F1F</color>
     <color name="app_bar">#FF000000</color>
+
+    <color name="background">#FF1F1F1F</color>
+    <color name="text_hint">#FF7F7B7A</color>
 </resources>
