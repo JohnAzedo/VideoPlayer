@@ -7,13 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ui.databinding.HomeFragmentBinding
-import com.example.ui.home.HomeViewModelFactory.make
 import com.example.ui.adapters.TrailAdapter
+import org.koin.android.ext.android.inject
 
 class HomeFragment: Fragment() {
 
     private var bind: HomeFragmentBinding? = null
-    private val viewModel: HomeViewModel by lazy { make() }
+    private val viewModel: HomeViewModel by inject()
     private lateinit var trailAdapter: TrailAdapter
 
     override fun onCreateView(

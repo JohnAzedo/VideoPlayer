@@ -9,13 +9,13 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.ui.R
 import com.example.ui.databinding.MovieDetailFragmentBinding
-import com.example.ui.detail.MovieDetailViewModelFactory.make
 import com.example.ui.detail.adapters.CustomFragmentStateAdapter
 import com.example.ui.detail.listeners.CustomTabLayoutClickListener
+import org.koin.android.ext.android.inject
 
 class MovieDetailFragment: Fragment(){
 
-    private val viewModel: MovieDetailViewModel by lazy { make() }
+    private val viewModel: MovieDetailViewModel by inject()
     private var bind: MovieDetailFragmentBinding? = null
 
     override fun onCreateView(

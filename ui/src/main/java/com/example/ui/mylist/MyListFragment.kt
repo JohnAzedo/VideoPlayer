@@ -8,11 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.ui.databinding.MyListFragmentBinding
 import com.example.ui.adapters.MovieAdapter
-import com.example.ui.mylist.MyListViewModelFactory.make
+import org.koin.android.ext.android.inject
 
 class MyListFragment: Fragment(){
     private var bind: MyListFragmentBinding? = null
-    private val viewModel: MyListViewModel by lazy { make() }
+    private val viewModel: MyListViewModel by inject()
     private lateinit var movieAdapter: MovieAdapter
 
     override fun onCreateView(
