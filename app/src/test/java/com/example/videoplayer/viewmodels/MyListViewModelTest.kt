@@ -13,11 +13,11 @@ import org.junit.Test
 class MyListViewModelTest: ViewModelTest() {
 
     private val useCase = mockk<GetMovieUseCase>()
-    private lateinit var viewModel: com.example.videoplayer.mylist.MyListViewModel
+    private lateinit var viewModel: com.example.videoplayer.features.mylist.MyListViewModel
 
     @Before
     fun setup(){
-        viewModel = com.example.videoplayer.mylist.MyListViewModel(useCase, testDispatcher)
+        viewModel = com.example.videoplayer.features.mylist.MyListViewModel(useCase, testDispatcher)
     }
 
     @Test
