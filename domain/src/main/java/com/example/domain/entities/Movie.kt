@@ -1,4 +1,4 @@
-package com.example.domain.usecases
+package com.example.domain.entities
 
 data class Movie(
     val id: Int,

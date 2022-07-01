@@ -1,6 +1,8 @@
 package com.example.domain.usecases
 
-import com.example.data.repositories.MovieRepository
+import com.example.domain.entities.Movie
+import com.example.domain.repositories.MovieRepository
+
 
 class GetMovieUseCaseImpl(
     private val movieRepository: MovieRepository

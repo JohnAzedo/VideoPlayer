@@ -1,7 +1,7 @@
-package com.example.domain.usecases
+package com.example.domain.entities
 
 data class Trail(
     var id: Int,
     var title: String,
-    var movies: List<com.example.domain.usecases.Movie>? = listOf()
+    var movies: List<Movie>? = listOf()
 )
