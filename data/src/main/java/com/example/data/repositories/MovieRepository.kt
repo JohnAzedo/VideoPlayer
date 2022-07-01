@@ -2,7 +2,7 @@ package com.example.data.repositories
 
 import com.example.data.config.Output
 import com.example.data.config.parseResponse
-import com.example.model.Movie
+import com.example.domain.usecases.Movie
 import com.example.data.response.MovieResponse
 import com.example.data.response.toMovie
 import com.example.data.services.MovieService
@@ -10,7 +10,7 @@ import com.example.data.services.MovieService
 class MovieRepositoryImpl(
     private val service: MovieService
 ): MovieRepository{
-    override suspend fun getMovie(movieId: Int): Movie {
+    override suspend fun getMovie(movieId: Int): com.example.domain.usecases.Movie {
         val result = service.getMovie(movieId).parseResponse()
 
         when (result) {
@@ -22,7 +22,7 @@ class MovieRepositoryImpl(
         }
     }
 
-    override suspend fun getMoviesByGenres(genresId: Int): List<Movie> {
+    override suspend fun getMoviesByGenres(genresId: Int): List<com.example.domain.usecases.Movie> {
         val result = service.discoveryMoviesByGenres(genresId).parseResponse()
 
         when (result) {
@@ -39,6 +39,6 @@ class MovieRepositoryImpl(
 
 
 interface MovieRepository {
-    suspend fun getMovie(movieId: Int) : com.example.model.Movie
-    suspend fun getMoviesByGenres(genresId: Int): List<com.example.model.Movie>
+    suspend fun getMovie(movieId: Int) : com.example.domain.usecases.Movie
+    suspend fun getMoviesByGenres(genresId: Int): List<com.example.domain.usecases.Movie>
 }

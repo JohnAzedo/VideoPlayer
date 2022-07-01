@@ -1,7 +1,7 @@
 package com.example.videoplayer
 
-import com.example.model.Movie
-import com.example.model.Trail
+import com.example.domain.usecases.Movie
+import com.example.domain.usecases.Trail
 
 object ViewModelStubs {
 

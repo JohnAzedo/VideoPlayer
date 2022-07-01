@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import com.example.model.Movie
+import com.example.domain.usecases.Movie
 import com.example.videoplayer.databinding.ItemMovieBinding
 
 import com.example.videoplayer.features.adapters.viewholders.MovieViewHolder
