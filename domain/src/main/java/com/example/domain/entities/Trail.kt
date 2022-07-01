@@ -1,4 +1,4 @@
-package com.example.model
+package com.example.domain.entities
 
 data class Trail(
     var id: Int,

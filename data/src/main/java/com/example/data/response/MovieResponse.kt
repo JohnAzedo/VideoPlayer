@@ -1,6 +1,7 @@
 package com.example.data.response
 
-import com.example.model.Movie
+
+import com.example.domain.entities.Movie
 import com.google.gson.annotations.SerializedName
 
 data class MovieResponse(
@@ -15,7 +16,7 @@ data class MovieResponse(
 )
 
 
-fun MovieResponse.toMovie() = Movie (
+fun MovieResponse.toMovie() = Movie(
     id = this.id,
     title = this.title,
     imageUrl = "https://image.tmdb.org/t/p/w500" + this.imageUrl,

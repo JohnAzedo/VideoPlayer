@@ -1,6 +1,6 @@
 package com.example.videoplayer.features.mylist
 
-import com.example.model.Movie
+import com.example.domain.entities.Movie
 import com.example.videoplayer.generics.State
 
 data class MyListState(

@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.model.Movie
+import com.example.domain.entities.Movie
 import com.example.videoplayer.R
 import com.example.videoplayer.databinding.ItemMovieBinding
 

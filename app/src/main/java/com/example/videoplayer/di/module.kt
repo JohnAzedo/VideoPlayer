@@ -1,9 +1,9 @@
 package com.example.videoplayer.di
 
 import com.example.data.config.RetrofitClient
-import com.example.data.repositories.MovieRepository
 import com.example.data.repositories.MovieRepositoryImpl
 import com.example.data.services.MovieService
+import com.example.domain.repositories.MovieRepository
 import com.example.domain.usecases.GetMovieUseCase
 import com.example.domain.usecases.GetMovieUseCaseImpl
 import com.example.domain.usecases.GetTrailsUseCase
