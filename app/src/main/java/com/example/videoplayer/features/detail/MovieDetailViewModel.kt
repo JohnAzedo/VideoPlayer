@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.domain.entities.Movie
 import com.example.domain.usecases.GetMovieUseCase
-import com.example.domain.usecases.Movie
 import kotlinx.coroutines.launch
 
 class MovieDetailViewModel(
