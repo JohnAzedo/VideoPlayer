@@ -42,7 +42,7 @@ class GetMovieRepositoryIntegrationTest {
     }
 
     private fun setResponse(filename: String, headers: Map<String, String> = emptyMap()) {
-        val path = "src/test/java/com/example/mockwebserverexample/resources/$filename"
+        val path = "src/test/java/com/example/data/$filename"
         val file = File(path).readText(Charsets.UTF_8)
         val mockResponse = MockResponse()
         for ((key, value) in headers) {
