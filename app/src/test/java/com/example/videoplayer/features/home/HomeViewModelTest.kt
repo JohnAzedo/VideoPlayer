@@ -20,7 +20,6 @@ class HomeViewModelTest: ViewModelTest() {
     private var stateObserver: Observer<HomeState> = mockk(relaxed = true)
     private var actionObserver: Observer<HomeAction> = mockk(relaxed = true)
 
-
     @Before
     fun setup(){
         viewModel = HomeViewModel(useCase, testDispatcher)
@@ -28,7 +27,7 @@ class HomeViewModelTest: ViewModelTest() {
     }
 
     @Test
-    fun `Get trails from useCase`() = runTest {
+    fun `getTrails Should fetch all trails and update state`() = runTest {
         coEvery { useCase.getTrails() } answers { LIST_TRAILS }
 
         // When
@@ -39,11 +38,9 @@ class HomeViewModelTest: ViewModelTest() {
             stateObserver.onChanged(INITIAL_STATE)
             stateObserver.onChanged(VALID_STATE)
         }
-
     }
 
     companion object {
-        val INITIAL_STATE = HomeState(listOf())
         val LIST_TRAILS = listOf(
             Trail(
                 10001,
@@ -51,6 +48,8 @@ class HomeViewModelTest: ViewModelTest() {
                 listOf()
             )
         )
+
+        val INITIAL_STATE = HomeState(listOf())
         val VALID_STATE = HomeState(LIST_TRAILS)
     }
 }
