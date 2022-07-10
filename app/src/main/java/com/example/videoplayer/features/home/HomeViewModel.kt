@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 class HomeViewModel(
     private val trailUseCase: GetTrailsUseCase,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO
-): ViewModel<HomeState, HomeAction>() {
+): ViewModel<HomeState, HomeAction>(HomeState(listOf())) {
 
     fun getTrails() {
         viewModelScope.launch(dispatcher) {

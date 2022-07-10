@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 class MyListViewModel(
     private val useCase: GetMovieUseCase,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO
-): ViewModel<MyListState, MyListActions>(){
+): ViewModel<MyListState, MyListActions>(MyListState(listOf())){
 
     fun getMovies() {
         viewModelScope.launch(dispatcher) {
