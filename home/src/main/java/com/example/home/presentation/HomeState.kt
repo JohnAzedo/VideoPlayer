@@ -5,8 +5,8 @@ import com.example.home.domain.entities.Trail
 
 
 data class HomeState(
-    var value: List<Trail>,
-) : State {
+    var trails: List<Trail>,
+): State {
 
     companion object {
         val EMPTY_VALUE = HomeState(listOf())

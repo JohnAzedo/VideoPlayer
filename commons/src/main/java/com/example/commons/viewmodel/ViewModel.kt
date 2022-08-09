@@ -4,11 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
 
-open class ViewModel<UIState: State, UIAction: Action>(
+abstract class ViewModel<UIState: State, UIAction: Action>(
     initialState: UIState
 ): androidx.lifecycle.ViewModel() {
 
-    private val _state = MutableLiveData<UIState>()
+    private val _state = MutableLiveData(initialState)
     val state: LiveData<UIState> get() = _state
 
     private val _actions = MutableLiveData<UIAction>()
@@ -20,9 +20,5 @@ open class ViewModel<UIState: State, UIAction: Action>(
 
     protected fun setAction(currentAction: UIAction){
         _actions.postValue(currentAction)
-    }
-
-    init {
-        _state.postValue(initialState)
     }
 }
