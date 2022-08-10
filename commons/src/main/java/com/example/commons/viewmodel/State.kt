@@ -1,3 +1,5 @@
 package com.example.commons.viewmodel
 
-interface State
+interface State {
+    val tag: Tag
+}

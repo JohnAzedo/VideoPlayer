@@ -6,13 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.commons.view.TagLayout
+import com.example.commons.view.onStateChange
 import com.example.home.databinding.HomeFragmentBinding
 import com.example.home.presentation.adapters.TrailAdapter
+import org.koin.android.ext.android.inject
 
-class HomeFragment: Fragment() {
+class HomeFragment: Fragment(), TagLayout {
 
-    private var bind: HomeFragmentBinding? = null
-    private val viewModel: HomeViewModel = HomeViewModel()
+    private var _bind: HomeFragmentBinding? = null
+    private val bind get() = _bind!!
+
+    private val viewModel: HomeViewModel by inject()
     private lateinit var trailAdapter: TrailAdapter
 
     override fun onCreateView(
@@ -20,31 +25,31 @@ class HomeFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        bind = HomeFragmentBinding.inflate(inflater, container, false)
+        _bind = HomeFragmentBinding.inflate(inflater, container, false)
         trailAdapter = TrailAdapter()
-        return bind?.root
+        return _bind?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        bind?.let {
-            it.rvTrail.apply {
-                layoutManager = LinearLayoutManager(activity)
-                adapter = trailAdapter
-            }
+        bind.rvTrail.apply {
+            layoutManager = LinearLayoutManager(activity)
+            adapter = trailAdapter
         }
+        handleState()
         super.onViewCreated(view, savedInstanceState)
     }
 
-    private fun hideLoader() {
-        bind?.loader?.visibility = View.GONE
-    }
-
-    private fun showTrails(){
-        bind?.rvTrail?.visibility = View.VISIBLE
+    private fun handleState() = onStateChange(viewModel) {
+        handleVisibility(it.tag)
+        trailAdapter.submitList(it.trails)
     }
 
     override fun onDestroy() {
-        bind = null
+        _bind = null
         super.onDestroy()
     }
+
+    override var containerLayout: View = bind.rvTrail
+    override var errorLayout: View = bind.error
+    override var loaderLayout: View = bind.loader
 }
