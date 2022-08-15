@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.home.databinding.ItemTrailBinding
 import com.example.home.domain.entities.Trail
-import com.example.videoplayer.features.adapters.MovieAdapter
+import com.example.home.presentation.adapters.MovieAdapter
 
 class TrailViewHolder(
     private val itemBiding: ItemTrailBinding,
