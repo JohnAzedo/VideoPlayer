@@ -6,16 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.commons.view.TagLayout
+import com.example.commons.view.Layout
+import com.example.commons.view.handleVisibility
 import com.example.commons.view.onStateChange
 import com.example.home.databinding.HomeFragmentBinding
 import com.example.home.presentation.adapters.TrailAdapter
 import org.koin.android.ext.android.inject
 
-class HomeFragment: Fragment(), TagLayout {
-
+class HomeFragment: Fragment() {
     private var _bind: HomeFragmentBinding? = null
     private val bind get() = _bind!!
+
+    private lateinit var layout: Layout
 
     private val viewModel: HomeViewModel by inject()
     private lateinit var trailAdapter: TrailAdapter
@@ -24,13 +26,14 @@ class HomeFragment: Fragment(), TagLayout {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _bind = HomeFragmentBinding.inflate(inflater, container, false)
-        trailAdapter = TrailAdapter()
-        return _bind?.root
+        layout = Layout(container = bind.rvTrail, error = bind.txtError, loader = bind.loader)
+        return bind.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        trailAdapter = TrailAdapter()
         bind.rvTrail.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = trailAdapter
@@ -40,16 +43,12 @@ class HomeFragment: Fragment(), TagLayout {
     }
 
     private fun handleState() = onStateChange(viewModel) {
-        handleVisibility(it.tag)
         trailAdapter.submitList(it.trails)
+        handleVisibility(it.tag, layout)
     }
 
     override fun onDestroy() {
         _bind = null
         super.onDestroy()
     }
-
-    override var containerLayout: View = bind.rvTrail
-    override var errorLayout: View = bind.error
-    override var loaderLayout: View = bind.loader
 }

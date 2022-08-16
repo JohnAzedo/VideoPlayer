@@ -10,21 +10,21 @@
         android:name="com.example.home.presentation.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/home_fragment">
-        <action
-            android:id="@+id/action_home_fragment_to_movieDetailFragment"
-            app:destination="@id/movie_detail_fragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_home_fragment_to_movieDetailFragment"-->
+<!--            app:destination="@id/movie_detail_fragment" />-->
     </fragment>
-    <fragment
-        android:id="@+id/my_list_fragment"
-        android:name="com.example.videoplayer.features.mylist.MyListFragment"
-        android:label="MyListFragment"
-        tools:layout="@layout/my_list_fragment">
-        <action
-            android:id="@+id/action_my_list_fragment_to_movieDetailFragment"
-            app:destination="@id/movie_detail_fragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/movie_detail_fragment"
-        android:name="com.example.videoplayer.features.detail.MovieDetailFragment"
-        android:label="MovieDetailFragment" />
+<!--    <fragment-->
+<!--        android:id="@+id/my_list_fragment"-->
+<!--        android:name="com.example.videoplayer.features.mylist.MyListFragment"-->
+<!--        android:label="MyListFragment"-->
+<!--        tools:layout="@layout/my_list_fragment">-->
+<!--        <action-->
+<!--            android:id="@+id/action_my_list_fragment_to_movieDetailFragment"-->
+<!--            app:destination="@id/movie_detail_fragment" />-->
+<!--    </fragment>-->
+<!--    <fragment-->
+<!--        android:id="@+id/movie_detail_fragment"-->
+<!--        android:name="com.example.videoplayer.features.detail.MovieDetailFragment"-->
+<!--        android:label="MovieDetailFragment" />-->
 </navigation>

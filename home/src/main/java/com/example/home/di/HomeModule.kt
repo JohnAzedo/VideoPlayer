@@ -17,5 +17,6 @@ val homeModule = module {
     }
 
     factoryOf(::MovieRepositoryImpl){ bind<MovieRepository>() }
+    factoryOf(::GetTrailUseCase)
     viewModelOf(::HomeViewModel)
 }
