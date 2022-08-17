@@ -1,7 +1,6 @@
 package com.example.home.data
 
-import com.example.commons.errors.InternalServerError
-import com.example.commons.errors.NetworkError
+import com.example.commons.errors.FeedbackErrors
 import com.example.commons.network.result
 import com.example.home.data.services.HomeService
 import com.example.home.domain.entities.Trail
@@ -13,14 +12,11 @@ import kotlinx.coroutines.flow.flow
 
 class MovieRepositoryImpl(private val service: HomeService) : HomeRepository {
     override fun getTrails(): Flow<List<Trail>> = flow {
-        val responseFlow = service.getHomeService().result()
-        responseFlow
-            .catch {
-                throw when(it) {
-                    is NetworkError -> InternalServerError()
-                    else -> InternalServerError()
-                }
+        service.getHomeService().result()
+            .catch { throw FeedbackErrors.GeneralError() }
+            .collect {
+                val result = Mapper.make(it)
+                emit(result)
             }
-            .collect { }
     }
 }

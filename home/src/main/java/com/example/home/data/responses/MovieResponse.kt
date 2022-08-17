@@ -1,4 +1,5 @@
 package com.example.home.data.responses
+import com.example.commons.network.ModelResponse
 import com.google.gson.annotations.SerializedName
 
 data class MovieResponse (
@@ -10,4 +11,8 @@ data class MovieResponse (
     val description: String?,
     @SerializedName("imageUrl")
     val imageUrl: String?,
-)
+): ModelResponse {
+    override fun isValid(): Boolean {
+        return id != null && title != null && description != null && imageUrl != null
+    }
+}
