@@ -1,18 +1,17 @@
 package com.example.commons.network
 
+import com.example.commons.errors.InternalServerError
+import com.example.commons.errors.NetworkError
+import kotlinx.coroutines.flow.flow
 import retrofit2.Response
 
-sealed interface Result <out S> {
-    data class Success<A> (val value: A): Result<A>
-    data class Failure(val errorStatus: Int): Result<Nothing>
-}
 
-const val INTERNAL_SERVER_ERROR = 500
-fun <A: Any> Response<A>.result()= run  {
+fun <A: Any> Response<A>.result() = flow {
     val body = body()
+    val code = code()
     when {
-        isSuccessful && body != null -> Result.Success(body)
-        isSuccessful && body == null -> Result.Failure(INTERNAL_SERVER_ERROR)
-        else -> Result.Failure(code())
+        isSuccessful && body != null -> emit(body)
+        isSuccessful && body == null -> throw InternalServerError()
+        else -> throw NetworkError(code = code)
     }
 }
