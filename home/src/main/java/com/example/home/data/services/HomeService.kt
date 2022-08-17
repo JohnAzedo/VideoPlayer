@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface HomeService {
     @GET("/home")
-    fun getHomeService(): Response<TrailResponse>
+    suspend fun getHomeService(): Response<TrailResponse>
 }

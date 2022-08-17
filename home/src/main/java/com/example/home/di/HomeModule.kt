@@ -7,7 +7,7 @@ import org.koin.core.module.dsl.bind
 import org.koin.dsl.module
 import com.example.home.presentation.HomeViewModel
 import com.example.home.data.MovieRepositoryImpl
-import com.example.home.domain.repositories.MovieRepository
+import com.example.home.domain.repositories.HomeRepository
 import com.example.home.domain.usecases.GetTrailUseCase
 
 
@@ -16,7 +16,7 @@ val homeModule = module {
         Dispatchers.IO
     }
 
-    factoryOf(::MovieRepositoryImpl){ bind<MovieRepository>() }
+    factoryOf(::MovieRepositoryImpl){ bind<HomeRepository>() }
     factoryOf(::GetTrailUseCase)
     viewModelOf(::HomeViewModel)
 }
