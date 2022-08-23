@@ -17,3 +17,6 @@ suspend fun <A: Any> Response<A>.onSuccess(lambda: suspend (A) -> Unit): Respons
     return this
 }
 
+suspend fun <A: Any> Response<A>.result(lambda: suspend Response<A>.() -> Unit){
+    lambda()
+}
