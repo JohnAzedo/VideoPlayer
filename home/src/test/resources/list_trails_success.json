@@ -1,0 +1,38 @@
+[
+  {
+    "id": 80,
+    "title": "Crime",
+    "movies": [
+      {
+        "id": 1,
+        "title": "Crime 01",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "imageUrl": "some-url.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Crime 02",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "imageUrl": "some-url.jpg"
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "title": "Documentary",
+    "movies": [
+      {
+        "id": 1,
+        "title": "Documentary 01",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "imageUrl": "some-url.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Documentary 02",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "imageUrl": "some-url.jpg"
+      }
+    ]
+  }
+]
