@@ -2,20 +2,24 @@ package com.example.home.data
 
 
 import app.cash.turbine.test
+import com.example.commons.errors.NetworkError
 import com.example.home.data.services.HomeService
 import com.google.gson.GsonBuilder
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest
 import okhttp3.mockwebserver.MockResponse
 import org.junit.After
 import okhttp3.mockwebserver.MockWebServer
+import org.hamcrest.MatcherAssert.assertThat
+import org.hamcrest.core.IsInstanceOf
 import org.junit.Before
 import org.junit.Test
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
+import kotlin.test.assertEquals
 
 @ExperimentalCoroutinesApi
 class MovieRepositoryImplTest {
@@ -56,6 +60,20 @@ class MovieRepositoryImplTest {
         }
     }
 
+    @Test(expected = NetworkError::class)
+    fun `getTrail Should return a GeneralError with code 500`() = runTest {
+        // Given
+        enqueueError(500, "")
+
+        // When
+        val result = repository.getTrails()
+
+        // Then
+        result.test {
+            throw awaitError()
+        }
+    }
+
 
     private fun enqueueResponse(filename: String, headers: Map<String, String> = emptyMap()) {
         val path = "/Users/joaolimao/Documents/GitHub/playmovie/home/src/test/resources/$filename"
@@ -65,5 +83,10 @@ class MovieRepositoryImplTest {
             mockResponse.addHeader(key, value)
         }
         server.enqueue(mockResponse.setBody(file))
+    }
+
+    private fun enqueueError(errorCode: Int, body: String){
+        val response = MockResponse().setResponseCode(errorCode).setBody(body)
+        server.enqueue(response)
     }
 }

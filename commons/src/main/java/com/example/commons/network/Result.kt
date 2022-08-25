@@ -1,22 +1,27 @@
 package com.example.commons.network
 
-import com.example.commons.errors.NetworkErrors
+import com.example.commons.errors.NetworkError
 import retrofit2.Response
 
 
 fun <A: Any> Response<A>.onError(lambda: (t: Throwable) -> Unit): Response<A> {
-    val body = body()
-    if(isSuccessful && body == null) lambda(NetworkErrors.InternalServerError())
-    if(!isSuccessful) lambda(NetworkErrors.GeneralError(code = code(), errorBody = errorBody()))
+    if(!isValid()) {
+        val code = code()
+        val errorBody = errorBody()
+        lambda(NetworkError(code, errorBody))
+    }
     return this
 }
 
 suspend fun <A: Any> Response<A>.onSuccess(lambda: suspend (A) -> Unit): Response<A> {
-    val body = body()
-    if(isSuccessful && body != null) lambda(body)
+    if(isValid()) lambda(body()!!)
     return this
 }
 
 suspend fun <A: Any> Response<A>.result(lambda: suspend Response<A>.() -> Unit){
     lambda()
+}
+
+private fun <A:Any> Response<A>.isValid(): Boolean {
+    return isSuccessful && body() != null
 }
