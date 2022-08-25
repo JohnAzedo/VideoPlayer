@@ -6,7 +6,7 @@ import retrofit2.Response
 
 fun <A: Any> Response<A>.onError(lambda: (t: Throwable) -> Unit): Response<A> {
     val body = body()
-    if(isSuccessful && body != null) lambda(NetworkErrors.InternalServerError())
+    if(isSuccessful && body == null) lambda(NetworkErrors.InternalServerError())
     if(!isSuccessful) lambda(NetworkErrors.GeneralError(code = code(), errorBody = errorBody()))
     return this
 }

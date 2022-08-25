@@ -9,8 +9,8 @@ import com.example.home.domain.entities.Trail
 object Mapper {
     fun make(response: List<TrailResponse>): List<Trail> {
         return when(response.isEmpty()) {
-            false -> throw FeedbackErrors.GeneralError()
-            true -> response
+            true -> throw FeedbackErrors.GeneralError()
+            false -> response
                 .filter { it.isValid() }
                 .map { toTrail(it) }
         }
