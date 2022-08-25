@@ -1,6 +1,7 @@
 package com.example.home.data
 
 
+import app.cash.turbine.test
 import com.example.home.data.services.HomeService
 import com.google.gson.GsonBuilder
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -46,12 +47,15 @@ class MovieRepositoryImplTest {
         enqueueResponse("list_trails_success.json")
 
         // When
-        val result = repository.getTrails().first()
+        val result = repository.getTrails()
 
         // Then
-        assert(result.isNotEmpty())
+        result.test {
+            assert(awaitItem().isNotEmpty())
+            awaitComplete()
+        }
     }
-    
+
 
     private fun enqueueResponse(filename: String, headers: Map<String, String> = emptyMap()) {
         val path = "/Users/joaolimao/Documents/GitHub/playmovie/home/src/test/resources/$filename"
