@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.commons.view.Layout
-import com.example.commons.view.handleVisibility
-import com.example.commons.view.onStateChange
+import com.example.tools.view.Layout
+import com.example.tools.view.handleVisibility
+import com.example.tools.view.onStateChange
 import com.example.home.databinding.HomeFragmentBinding
 import com.example.home.presentation.adapters.TrailAdapter
 import org.koin.android.ext.android.inject

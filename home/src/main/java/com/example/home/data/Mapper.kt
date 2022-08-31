@@ -1,6 +1,6 @@
 package com.example.home.data
 
-import com.example.commons.errors.FeedbackErrors
+import com.example.tools.errors.FeedbackErrors
 import com.example.home.data.responses.MovieResponse
 import com.example.home.data.responses.TrailResponse
 import com.example.home.domain.entities.Movie

@@ -1,5 +1,5 @@
 package com.example.home.data.responses
-import com.example.commons.network.ModelResponse
+import com.example.tools.network.ModelResponse
 import com.google.gson.annotations.SerializedName
 
 data class MovieResponse (

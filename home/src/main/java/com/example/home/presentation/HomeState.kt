@@ -1,7 +1,7 @@
 package com.example.home.presentation
 
-import com.example.commons.viewmodel.State
-import com.example.commons.viewmodel.Tag
+import com.example.tools.viewmodel.State
+import com.example.tools.viewmodel.Tag
 import com.example.home.domain.entities.Trail
 
 

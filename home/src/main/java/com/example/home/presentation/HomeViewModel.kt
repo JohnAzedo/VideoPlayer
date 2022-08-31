@@ -1,13 +1,13 @@
 package com.example.home.presentation
 
-import com.example.commons.viewmodel.ViewModel
+import com.example.tools.viewmodel.ViewModel
 import com.example.home.domain.entities.Trail
 import com.example.home.domain.usecases.GetTrailUseCase
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import androidx.lifecycle.viewModelScope
-import com.example.commons.viewmodel.Tag
+import com.example.tools.viewmodel.Tag
 import kotlinx.coroutines.launch
 
 
